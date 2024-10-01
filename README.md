@@ -67,6 +67,18 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
     	cp /whisperX/audio.* /home/docker/ && \
     	chmod 777 /home/docker/audio.*"
 
+**Higher accuracy model using intensive GPU computation:**
+
+    docker run --runtime=nvidia --gpus all \
+    -v ${PWD}:/home/docker/ \
+    -it gianpaolocoro/whisperx_aligner \
+    bash -c "source /root/anaconda3/etc/profile.d/conda.sh && \
+    conda activate whisperx && cd /whisperX/ && \
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/anaconda3/pkgs/pytorch-2.0.0-py3.10_cuda11.8_cudnn8.7.0_0/lib/python3.10/site-packages/torch/lib/ && \
+    whisperx /home/docker/audio.wav --compute_type int8 --language it --model large-v3 && \
+    cp /whisperX/audio.* /home/docker/ && \
+    chmod 777 /home/docker/audio.*"
+    
 **Output: audio.txt and audio.\* accessory files with segmentation information.**
 
 
