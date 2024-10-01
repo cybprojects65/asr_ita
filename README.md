@@ -3,7 +3,7 @@ The present repository collects different docker versions of free-to-use ASRs th
 
 **Sample file:** https://data.d4science.net/53BM
 
-**Optimal input audio format:** WAV mono, 16 bit, 16kHz
+**Optimal input audio format:** WAVE, mono, 16 bit, 16kHz
 
 **Sample run (on audio.wav input, executed from the folder containing the wave file)**:
 
