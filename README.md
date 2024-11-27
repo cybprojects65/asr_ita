@@ -81,6 +81,19 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
     
 **Output: audio.txt and audio.\* accessory files with segmentation information.**
 
+## Wav2vec2-large-xlsr-53-italian  
+**Reference**: https://huggingface.co/facebook/wav2vec2-large-xlsr-53-italian/blob/main/README.md
+
+**Docker**: https://hub.docker.com/repository/docker/gianpaolocoro/wav2vec2-large-xlsr-53-italian/general
+
+    docker run -it -v ${PWD}:/home/docker \
+    gianpaolocoro/wav2vec2-large-xlsr-53-italian \
+    /bin/sh -c "python wav2vec2_transcription.py \ 
+    /home/docker/audio.wav"
+    
+       
+**Output: audio.txt in the same folder as the input audio.wav file**
+
 
 
 
