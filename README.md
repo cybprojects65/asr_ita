@@ -1,3 +1,4 @@
+
 # FREE-TO-USE AUTOMATIC SPEECH RECOGNIZERS FOR ITALIAN
 The present repository collects different docker versions of free-to-use ASRs that include Italian among the supported languages, which can be used to run performance comparisons. The dockers represent non-optimized laboratories to run experiments and compile new versions of the ASRs, they do not substitute the ASRs' original docker images.
 
@@ -94,6 +95,15 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
        
 **Output: audio.txt in the same folder as the input audio.wav file**
 
+## NVIDIA FastConformer-Hybrid Large (it)
+**Reference**: https://huggingface.co/nvidia/stt_it_fastconformer_hybrid_large_pc
 
+**Docker**: https://hub.docker.com/repository/docker/gianpaolocoro/nvidia_stt_it_fastconformer_hybrid_large_pc/general
 
-
+    docker run --runtime=nvidia --gpus all \
+    -v ${PWD}:/home/docker -it gianpaolocoro/nvidia_stt_it_fastconformer_hybrid_large_pc:1.2\
+     /bin/bash -c "export LD_LIBRARY_PATH=/usr/local/cuda-11.8/targets/x86_64-linux/lib:$LD_LIBRARY_PATH \
+     && python doasr_home.py /home/docker/audio.wav"
+     
+       
+**Output: audio.txt in the same folder as the input audio.wav file**
