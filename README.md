@@ -107,3 +107,15 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
      
        
 **Output: audio.txt in the same folder as the input audio.wav file**
+
+## NVIDIA Conformer-Transducer Large (it) 
+**Reference**: https://huggingface.co/nvidia/stt_it_conformer_transducer_large
+
+**Docker**: https://hub.docker.com/repository/docker/gianpaolocoro/nvidia_stt_it_conformer_transducer_large/general
+
+    docker run --runtime=nvidia --gpus all \
+    -v ${PWD}:/home/docker -it gianpaolocoro/nvidia_stt_it_conformer_transducer_large:1.0\
+    /bin/bash -c "export LD_LIBRARY_PATH=/usr/local/cuda-11.8/targets/x86_64-linux/lib:$LD_LIBRARY_PATH \
+    && python doasr_home.py /home/docker/audio.wav"
+
+**Output: audio.txt in the same folder as the input audio.wav file**
