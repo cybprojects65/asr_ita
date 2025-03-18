@@ -82,6 +82,19 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
     
 **Output: audio.txt and audio.\* accessory files with segmentation information.**
 
+## WHISPER Large v3
+**Reference**: https://huggingface.co/openai/whisper-large-v3
+
+**Docker**: https://hub.docker.com/repository/docker/gianpaolocoro/openai_whisper-large-v3/general
+
+    docker run --runtime=nvidia --gpus all \
+    -v ${PWD}:/home/docker/ \
+    -it gianpaolocoro/openai_whisper-large-v3:1.0 \
+    /bin/bash -c "export LD_LIBRARY_PATH=/usr/local/cuda-11.8/targets/x86_64-linux/lib:$LD_LIBRARY_PATH \
+    && python doasr_whisp.py /home/docker/audio.wav"
+
+**Output: audio.txt in the same folder as the input audio.wav file**
+
 ## Wav2vec2-large-xlsr-53-italian  
 **Reference**: https://huggingface.co/facebook/wav2vec2-large-xlsr-53-italian/blob/main/README.md
 
