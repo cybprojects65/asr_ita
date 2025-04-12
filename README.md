@@ -123,7 +123,7 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
 **Docker**: https://hub.docker.com/repository/docker/gianpaolocoro/nvidia_stt_it_fastconformer_hybrid_large_pc/general
 
     docker run --rm --runtime=nvidia --gpus all \
-    -v ${PWD}:/home/docker -it gianpaolocoro/nvidia_stt_it_fastconformer_hybrid_large_pc:nvidia520_cuda11.8\
+    -v ${PWD}:/home/docker -it gianpaolocoro/nvidia_stt_it_fastconformer_hybrid_large_pc:nvidia520_cuda11.8 \
      /bin/bash -c "export LD_LIBRARY_PATH=/usr/local/cuda-11.8/targets/x86_64-linux/lib:$LD_LIBRARY_PATH \
      && python doasr_home.py /home/docker/audio.wav"
      
@@ -136,7 +136,7 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
 **Docker**: https://hub.docker.com/repository/docker/gianpaolocoro/nvidia_stt_it_conformer_transducer_large/general
 
     docker run --rm --runtime=nvidia --gpus all \
-    -v ${PWD}:/home/docker -it gianpaolocoro/nvidia_stt_it_conformer_transducer_large:nvidia520_cuda11.8\
+    -v ${PWD}:/home/docker -it gianpaolocoro/nvidia_stt_it_conformer_transducer_large:nvidia520_cuda11.8 \
     /bin/bash -c "export LD_LIBRARY_PATH=/usr/local/cuda-11.8/targets/x86_64-linux/lib:$LD_LIBRARY_PATH \
     && python doasr_home.py /home/docker/audio.wav"
 
@@ -149,7 +149,7 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
 **Docker**: https://hub.docker.com/repository/docker/gianpaolocoro/nvidia_stt_it_conformer_ctc_large/general
 
     docker run --rm --runtime=nvidia --gpus all \
-    -v ${PWD}:/home/docker -it  gianpaolocoro/nvidia_stt_it_conformer_ctc_large:nvidia520_cuda11.8\
+    -v ${PWD}:/home/docker -it  gianpaolocoro/nvidia_stt_it_conformer_ctc_large:nvidia520_cuda11.8 \
     /bin/bash -c "export LD_LIBRARY_PATH=/usr/local/cuda-11.8/targets/x86_64-linux/lib:$LD_LIBRARY_PATH \
     && python doasr_home.py /home/docker/audio.wav"
 
