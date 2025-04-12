@@ -98,7 +98,7 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
 
     docker run --rm --runtime=nvidia --gpus all \
     -v ${PWD}:/home/docker/ \
-    -it gianpaolocoro/openai_whisper-large-v3:1.0 \
+    -it gianpaolocoro/openai_whisper-large-v3:nvidia520_cuda11.8 \
     /bin/bash -c "export LD_LIBRARY_PATH=/usr/local/cuda-11.8/targets/x86_64-linux/lib:$LD_LIBRARY_PATH \
     && python doasr_whisp.py /home/docker/audio.wav"
 
