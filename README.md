@@ -129,6 +129,7 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
        
 **Output: audio.txt in the same folder as the input audio.wav file**
 
+
 ## NVIDIA Conformer-Transducer Large (it) 
 **Reference**: https://huggingface.co/nvidia/stt_it_conformer_transducer_large
 
@@ -166,3 +167,20 @@ Trained as reported in Coro, G., Massoli, F. V., Origlia, A., & Cutugno, F. (202
     
 **Output: audio.txt in the same folder as the input audio.wav file**
 
+## NCSS-WHISPER
+A Whisper-base ASR fine-tuned by the Natural and Cognitive System Simulation Research Group on the following Italian corpora: Apaci, Clips-Letto, Fleurs, Lablita, Speecon, VoxForge, VoxPopuli, and Yodas.
+
+Author: Manu Srivastava.
+
+Paper about the data collection: Coro, G., Cutugno, F., Schettino, L., Tanda, E., Vietti, A., & Vitale, V. N. (2025). Phoné: An Initiative to Develop a Dataset for the Automatic Recognition of Spoken Italian. Oral Archives Journal, 1, 89-107.
+
+**Reference**: https://hub.docker.com/r/srivastavam/whisper_base_ms
+
+**Docker**: https://hub.docker.com/r/srivastavam/whisper_base_ms
+
+    docker run --rm -v "${PWD}audio.wav":/data/AudioFile.wav \
+    -v "${PWD}:/outputs srivastavam/whisper_base_ms:v1.2 \
+    "/data/AudioFile.wav" "/outputs/audio.txt"
+
+**Output: audio.txt in the same folder as the input audio.wav file**
+    
