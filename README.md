@@ -178,9 +178,7 @@ Paper about the data collection: Coro, G., Cutugno, F., Schettino, L., Tanda, E.
 
 **Docker**: https://hub.docker.com/r/srivastavam/whisper_base_ms
 
-    docker run --rm -v "${PWD}/audio.wav":/data/AudioFile.wav \
-    -v "${PWD}:/outputs" srivastavam/whisper_base_ms:v1.2 \
-    "/data/AudioFile.wav" "/outputs/audio.txt"
+    docker run --rm -v ${PWD}:/home/docker srivastavam/whisper_base_ms:v1.3 "transcribe.py audioFileName.wav"
 
 **Output: audio.txt in the same folder as the input audio.wav file**
     
